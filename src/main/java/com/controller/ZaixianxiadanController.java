@@ -40,8 +40,7 @@ import com.utils.CommonUtil;
  * 在线下单
  * 后端接口
  * @author 
- * @email 
- * @date 2021-03-30 19:28:31
+ * @email
  */
 @RestController
 @RequestMapping("/zaixianxiadan")
@@ -130,8 +129,6 @@ public class ZaixianxiadanController {
     @RequestMapping("/save")
     public R save(@RequestBody ZaixianxiadanEntity zaixianxiadan, HttpServletRequest request){
     	zaixianxiadan.setId(new Date().getTime()+new Double(Math.floor(Math.random()*1000)).longValue());
-    	//ValidatorUtils.validateEntity(zaixianxiadan);
-
         zaixianxiadanService.insert(zaixianxiadan);
         return R.ok();
     }
@@ -144,7 +141,6 @@ public class ZaixianxiadanController {
     	zaixianxiadan.setId(new Date().getTime()+new Double(Math.floor(Math.random()*1000)).longValue());
     	//ValidatorUtils.validateEntity(zaixianxiadan);
     	zaixianxiadan.setUserid((Long)request.getSession().getAttribute("userId"));
-
         zaixianxiadanService.insert(zaixianxiadan);
         return R.ok();
     }

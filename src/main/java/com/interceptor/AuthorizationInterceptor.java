@@ -20,8 +20,9 @@ import com.entity.TokenEntity;
 import com.service.TokenService;
 import com.utils.R;
 
+
 /**
- * 权限(Token)验证
+ * 权限(Token)验证过滤器
  */
 @Component
 public class AuthorizationInterceptor implements HandlerInterceptor {
@@ -82,7 +83,6 @@ public class AuthorizationInterceptor implements HandlerInterceptor {
 		        writer.close();
 		    }
 		}
-//				throw new EIException("请先登录", 401);
 		return false;
     }
 }

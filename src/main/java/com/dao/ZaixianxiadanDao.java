@@ -15,19 +15,13 @@ import com.entity.view.ZaixianxiadanView;
  * 在线下单
  * 
  * @author 
- * @email 
- * @date 2021-03-30 19:28:31
+ * @email
  */
 public interface ZaixianxiadanDao extends BaseMapper<ZaixianxiadanEntity> {
-	
 	List<ZaixianxiadanVO> selectListVO(@Param("ew") Wrapper<ZaixianxiadanEntity> wrapper);
-	
 	ZaixianxiadanVO selectVO(@Param("ew") Wrapper<ZaixianxiadanEntity> wrapper);
-	
 	List<ZaixianxiadanView> selectListView(@Param("ew") Wrapper<ZaixianxiadanEntity> wrapper);
-
 	List<ZaixianxiadanView> selectListView(Pagination page,@Param("ew") Wrapper<ZaixianxiadanEntity> wrapper);
-	
 	ZaixianxiadanView selectView(@Param("ew") Wrapper<ZaixianxiadanEntity> wrapper);
 	
 }

@@ -39,17 +39,6 @@ const routes = [{
       component: UpdatePassword,
       meta: {icon:'', title:'updatePassword'}
     }, {
-      path: '/pay',
-      name: '支付',
-      component: pay,
-      meta: {icon:'', title:'pay'}
-    }, {
-      path: '/center',
-      name: '个人信息',
-      component: center,
-      meta: {icon:'', title:'center'}
-    }
-      ,{
 	path: '/yijiedingdan',
         name: '已接订单',
         component: yijiedingdan

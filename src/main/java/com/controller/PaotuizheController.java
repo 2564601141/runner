@@ -53,7 +53,7 @@ public class PaotuizheController {
 	private TokenService tokenService;
 	
 	/**
-	 * 登录
+	 * 小程序端登录验证接口
 	 */
 	@IgnoreAuth
 	@RequestMapping(value = "/login")
@@ -67,7 +67,7 @@ public class PaotuizheController {
 	}
 	
 	/**
-     * 注册
+     * 小程序端注册接口
      */
 	@IgnoreAuth
     @RequestMapping("/register")
@@ -84,7 +84,7 @@ public class PaotuizheController {
     }
 	
 	/**
-	 * 退出
+	 * 小程序端退出
 	 */
 	@RequestMapping("/logout")
 	public R logout(HttpServletRequest request) {
@@ -103,7 +103,7 @@ public class PaotuizheController {
     }
     
     /**
-     * 密码重置
+     * 小程序端密码重置接口
      */
     @IgnoreAuth
 	@RequestMapping(value = "/resetPass")
@@ -151,7 +151,7 @@ public class PaotuizheController {
     }
 
 	 /**
-     * 查询
+     * 后台管理端查询所有接口
      */
     @RequestMapping("/query")
     public R query(PaotuizheEntity paotuizhe){
@@ -162,7 +162,7 @@ public class PaotuizheController {
     }
 	
     /**
-     * 后端详情
+     * 后台管理端跑腿者详情接口
      */
     @RequestMapping("/info/{id}")
     public R info(@PathVariable("id") Long id){
@@ -171,19 +171,16 @@ public class PaotuizheController {
     }
 
     /**
-     * 前端详情
+     * 小程序端跑腿者详情接口
      */
     @RequestMapping("/detail/{id}")
     public R detail(@PathVariable("id") Long id){
         PaotuizheEntity paotuizhe = paotuizheService.selectById(id);
         return R.ok().put("data", paotuizhe);
     }
-    
-
-
 
     /**
-     * 后端保存
+     * 后台管理端保存接口
      */
     @RequestMapping("/save")
     public R save(@RequestBody PaotuizheEntity paotuizhe, HttpServletRequest request){
@@ -200,7 +197,7 @@ public class PaotuizheController {
     }
     
     /**
-     * 前端保存
+     * 小程序端保存接口
      */
     @RequestMapping("/add")
     public R add(@RequestBody PaotuizheEntity paotuizhe, HttpServletRequest request){
@@ -217,7 +214,7 @@ public class PaotuizheController {
     }
 
     /**
-     * 修改
+     * 修改接口
      */
     @RequestMapping("/update")
     public R update(@RequestBody PaotuizheEntity paotuizhe, HttpServletRequest request){
@@ -228,7 +225,7 @@ public class PaotuizheController {
     
 
     /**
-     * 删除
+     * 删除接口
      */
     @RequestMapping("/delete")
     public R delete(@RequestBody Long[] ids){

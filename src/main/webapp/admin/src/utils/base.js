@@ -9,7 +9,7 @@ const base = {
     },
     getProjectName(){
         return {
-            projectName: "校园跑腿系统小程序"
+            projectName: "校园跑腿小程序"
         } 
     }
 }

@@ -46,21 +46,17 @@ import com.utils.CommonUtil;
 @RestController
 @RequestMapping("/chat")
 public class ChatController {
+
     @Autowired
     private ChatService chatService;
-    
-
-
     /**
      * 后端列表
      */
     @RequestMapping("/page")
-    public R page(@RequestParam Map<String, Object> params,ChatEntity chat, 
-		HttpServletRequest request){
+    public R page(@RequestParam Map<String, Object> params,ChatEntity chat,HttpServletRequest request){
     	if(!request.getSession().getAttribute("role").toString().equals("管理员")) {
     		chat.setUserid((Long)request.getSession().getAttribute("userId"));
     	}
-
         EntityWrapper<ChatEntity> ew = new EntityWrapper<ChatEntity>();
 		PageUtils page = chatService.queryPage(params, MPUtil.sort(MPUtil.between(MPUtil.likeOrEq(ew, chat), params), params));
         return R.ok().put("data", page);
@@ -102,7 +98,7 @@ public class ChatController {
     }
 	
     /**
-     * 后端详情
+     * 根据id查询chat
      */
     @RequestMapping("/info/{id}")
     public R info(@PathVariable("id") Long id){
@@ -128,7 +124,7 @@ public class ChatController {
     @RequestMapping("/save")
     public R save(@RequestBody ChatEntity chat, HttpServletRequest request){
     	chat.setId(new Date().getTime()+new Double(Math.floor(Math.random()*1000)).longValue());
-    	//ValidatorUtils.validateEntity(chat);
+
     	if(StringUtils.isNotBlank(chat.getAsk())) {
 			chatService.updateForSet("isreply=0", new EntityWrapper<ChatEntity>().eq("userid", request.getSession().getAttribute("userId")));
     		chat.setUserid((Long)request.getSession().getAttribute("userId"));

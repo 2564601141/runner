@@ -4,10 +4,9 @@ import java.util.Random;
 
 public class CommonUtil {
 	/**
-     * 获取随机字符串
-     *
+     * 获取随机字符串工具类
      * @param num
-     * @return
+     * @return 随机String
      */
     public static String getRandomString(Integer num) {
         String base = "abcdefghijklmnopqrstuvwxyz0123456789";

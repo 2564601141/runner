@@ -13,10 +13,6 @@ import com.entity.view.ZaixianxiadanView;
 
 /**
  * 在线下单
- *
- * @author 
- * @email 
- * @date 2021-03-30 19:28:31
  */
 public interface ZaixianxiadanService extends IService<ZaixianxiadanEntity> {
 

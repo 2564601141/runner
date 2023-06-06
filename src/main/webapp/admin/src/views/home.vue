@@ -13,6 +13,7 @@ export default {
   },
   methods:{
     init(){
+        //进入首页先判断token
         if(this.$storage.get('Token')){
         this.$http({
             url: `${this.$storage.get('sessionTable')}/session`,

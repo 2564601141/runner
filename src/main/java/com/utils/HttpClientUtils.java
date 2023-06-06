@@ -15,7 +15,7 @@ public class HttpClientUtils {
      * @param uri
      * @return String
      * @description get请求方式
-     * @author: long.he01
+     * @author:
      */
     public static String doGet(String uri) {
 

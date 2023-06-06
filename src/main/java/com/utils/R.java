@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * 返回数据
+ * 返回数据工具类
  */
 public class R extends HashMap<String, Object> {
 	private static final long serialVersionUID = 1L;
